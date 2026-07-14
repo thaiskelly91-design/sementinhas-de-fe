@@ -10,9 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
-    title: "Sementinhas da Fé | Atividades Bíblicas Infantis",
+    title: "Sementinhas de Fé | Atividades Bíblicas para Imprimir",
     description:
-      "Oito coleções de atividades bíblicas infantis em PDF para aprender, criar e crescer na fé em casa, na igreja ou na Escola Bíblica.",
+      "30 atividades bíblicas prontas para imprimir e ensinar a Palavra de Deus em só 10 minutos por dia.",
     icons: {
       icon: "/favicon.png",
       shortcut: "/favicon.png",
@@ -21,22 +21,22 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: "pt_BR",
       url: origin,
-      title: "Sementinhas da Fé — Atividades Bíblicas Infantis",
-      description: "Um ecossistema de atividades em PDF criado por Kelly para semear a fé brincando.",
+      title: "Sementinhas de Fé",
+      description: "30 atividades bíblicas prontas para imprimir. 10 minutos por dia.",
       images: [
         {
-          url: `${origin}/og-sementinhas.png`,
+          url: `${origin}/og.png`,
           width: 1536,
           height: 1024,
-          alt: "Sementinhas da Fé, atividades bíblicas infantis criadas por Kelly",
+          alt: "Sementinhas de Fé — 30 atividades bíblicas prontas para imprimir",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Sementinhas da Fé — Atividades Bíblicas Infantis",
-      description: "Um ecossistema de atividades em PDF criado por Kelly para semear a fé brincando.",
-      images: [`${origin}/og-sementinhas.png`],
+      title: "Sementinhas de Fé",
+      description: "30 atividades bíblicas prontas para imprimir. 10 minutos por dia.",
+      images: [`${origin}/og.png`],
     },
   };
 }
@@ -44,6 +44,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
+      <head
+        dangerouslySetInnerHTML={{
+          __html: "<!-- PIXEL_META_ADS_AQUI -->\n<!-- GA_AQUI -->",
+        }}
+      />
       <body>{children}</body>
     </html>
   );
