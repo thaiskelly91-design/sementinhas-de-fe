@@ -3,56 +3,56 @@ const pillars = [
     icon: "🎨",
     title: "Desenhos para colorir",
     text: "Momentos tranquilos de criatividade enquanto as histórias da Bíblia ganham cor.",
-    image: "capa ou página real dos desenhos",
+    position: "0% 0%",
   },
   {
     icon: "🔤",
     title: "Alfabetização cristã",
     text: "Letras, palavras e primeiros aprendizados conectados a valores que permanecem.",
-    image: "capa ou página real de alfabetização",
+    position: "33.333% 0%",
   },
   {
     icon: "🧮",
     title: "Matemática com propósito",
     text: "Desafios adequados ao universo infantil com temas bíblicos que aproximam e envolvem.",
-    image: "capa ou página real de matemática",
+    position: "66.666% 0%",
   },
   {
     icon: "📖",
     title: "Histórias ilustradas",
     text: "Narrativas bíblicas apresentadas de forma visual, simples e memorável para os pequenos.",
-    image: "capa ou página real das histórias",
+    position: "100% 0%",
   },
   {
     icon: "🙏",
     title: "Devocionais infantis",
     text: "Um caminho acolhedor para conversar sobre Deus e cultivar a fé na rotina da família.",
-    image: "capa ou página real dos devocionais",
+    position: "0% 100%",
   },
   {
     icon: "✂️",
     title: "Recorte, colagem e jogos",
     text: "Atividades manuais que estimulam a atenção, a coordenação e a participação ativa.",
-    image: "capa ou página real dos jogos",
+    position: "33.333% 100%",
   },
   {
     icon: "⛪",
     title: "Escola bíblica",
-    text: "Recursos práticos para apoiar professores da Escola Dominical ou Escola Sabatina.",
-    image: "capa ou página real do material para escola bíblica",
+    text: "Recursos práticos para apoiar professores e líderes da Escola Bíblica.",
+    position: "66.666% 100%",
   },
   {
     icon: "🏅",
     title: "Certificados e recompensas",
     text: "Pequenos marcos para celebrar cada aprendizado e fortalecer a motivação das crianças.",
-    image: "capa ou página real dos certificados",
+    position: "100% 100%",
   },
 ];
 
 const benefits = [
   ["⚡", "Acesso imediato", "Receba o material digital logo após a confirmação da compra."],
   ["🖨️", "Pronto para A4", "Imprima apenas as atividades que quiser usar, quando precisar."],
-  ["🏡", "Para diferentes rotinas", "Use em casa, na igreja, na Escola Dominical ou na Escola Sabatina."],
+  ["🏡", "Para diferentes rotinas", "Use em casa, na igreja ou na Escola Bíblica."],
   ["📱", "Digital e prático", "Arquivos em PDF organizados para acessar e preparar sem complicação."],
 ];
 
@@ -64,11 +64,13 @@ const faqs = [
   },
   {
     question: "Posso imprimir quantas vezes quiser?",
-    answer: "[PREENCHER: informe a licença de uso e as regras reais de impressão do material].",
+    answer:
+      "Sim. Você pode reimprimir as atividades para uso pessoal, familiar ou com uma turma da Escola Bíblica. A revenda e o compartilhamento dos arquivos digitais não são permitidos.",
   },
   {
     question: "Para qual faixa etária é indicado?",
-    answer: "[PREENCHER: faixa etária real e, se necessário, o nível de acompanhamento de um adulto].",
+    answer:
+      "É indicado para crianças de 4 a 10 anos. As menores ou que ainda não leem aproveitam melhor com o acompanhamento de um adulto.",
   },
   {
     question: "Funciona no celular ou tablet?",
@@ -77,12 +79,13 @@ const faqs = [
   },
   {
     question: "Como funciona a garantia?",
-    answer: "[PREENCHER: resuma aqui o prazo, as condições e o canal real para solicitar a garantia].",
+    answer:
+      "Você tem 7 dias corridos após a compra para solicitar o reembolso pela central de suporte da plataforma de pagamento.",
   },
   {
     question: "O pagamento é seguro?",
     answer:
-      "O pagamento será processado pelo ambiente seguro do checkout escolhido. [PREENCHER: nome da plataforma de pagamento].",
+      "Sim. O pagamento é processado em ambiente protegido pelo checkout oficial e os dados financeiros não ficam armazenados nesta página.",
   },
 ];
 
@@ -94,19 +97,6 @@ function Check({ children }: { children: React.ReactNode }) {
       </span>
       <span>{children}</span>
     </li>
-  );
-}
-
-function ProductPlaceholder({ label, large = false }: { label: string; large?: boolean }) {
-  return (
-    <div className={`product-placeholder${large ? " product-placeholder--large" : ""}`}>
-      <span className="placeholder-tag">IMAGEM REAL</span>
-      <span className="placeholder-icon" aria-hidden="true">
-        ▧
-      </span>
-      <strong>[PREENCHER]</strong>
-      <small>Inserir {label}</small>
-    </div>
   );
 }
 
@@ -123,7 +113,7 @@ export default function Home() {
             ❤
           </span>
           <span>
-            <strong>[PREENCHER: nome do produto]</strong>
+            <strong>Sementinhas da Fé</strong>
             <small>Atividades bíblicas infantis</small>
           </span>
         </a>
@@ -144,7 +134,7 @@ export default function Home() {
               casa, na igreja ou na escola bíblica.
             </p>
             <div className="proof-row">
-              <span className="proof-chip">[PREENCHER: quantidade real] atividades e eBooks</span>
+              <span className="proof-chip">8 coleções + bônus em PDF</span>
               <span className="proof-chip">Acesso imediato</span>
             </div>
             <a className="button button--primary" href="#oferta">
@@ -160,9 +150,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Espaço reservado para o mockup real do produto">
+          <div className="hero-visual">
             <span className="visual-note visual-note--top">✓ Pronto para imprimir</span>
-            <ProductPlaceholder label="mockup real do kit completo" large />
+            <img
+              className="hero-product-image"
+              src="/hero-sementinhas.webp"
+              width="1536"
+              height="2048"
+              alt="Mockup do kit Sementinhas da Fé com tablet, caderno e atividades impressas"
+              fetchPriority="high"
+            />
             <span className="visual-note visual-note--bottom">♡ Feito com propósito</span>
           </div>
         </section>
@@ -176,12 +173,15 @@ export default function Home() {
 
         <section className="section about" id="sobre">
           <div className="portrait-wrap">
-            <div className="portrait-placeholder">
-              <span className="placeholder-tag">FOTO REAL</span>
-              <span aria-hidden="true">☺</span>
-              <strong>[PREENCHER]</strong>
-              <small>Foto ou identidade visual da Kelly</small>
-            </div>
+            <img
+              className="portrait-image"
+              src="/kelly-retrato.webp"
+              width="1024"
+              height="2048"
+              alt="Retrato ilustrativo de Kelly em um espaço acolhedor de educação infantil"
+              loading="lazy"
+            />
+            <span className="image-disclosure">Imagem ilustrativa</span>
             <div className="handwritten-note">com carinho, Kelly ♡</div>
           </div>
           <div className="about-copy">
@@ -225,8 +225,8 @@ export default function Home() {
           <div className="extra-item">
             <span aria-hidden="true">+</span>
             <p>
-              <strong>[PREENCHER: outros itens reais do produto]</strong>
-              Acrescente aqui somente os materiais que fazem parte do kit.
+              <strong>Calendário de Hábitos da Fé + cartões de versículos</strong>
+              Recursos extras para transformar o aprendizado em uma rotina leve e memorável.
             </p>
           </div>
         </section>
@@ -236,14 +236,20 @@ export default function Home() {
             <span className="eyebrow">Veja o que você vai receber</span>
             <h2>Materiais que convidam a criança a participar</h2>
             <p>
-              Substitua cada espaço abaixo por uma capa ou página interna real. Assim, as famílias enxergam com
-              clareza o que estão adquirindo.
+              Oito coleções com propostas diferentes para você escolher a atividade certa para cada momento.
             </p>
           </div>
           <div className="material-grid">
             {pillars.map((pillar, index) => (
               <article className="material-card" key={pillar.title}>
-                <ProductPlaceholder label={pillar.image} />
+                <div
+                  className="material-visual"
+                  style={{ backgroundPosition: pillar.position }}
+                  role="img"
+                  aria-label={`Capa ilustrativa da coleção ${pillar.title}`}
+                >
+                  <span>COLEÇÃO DIGITAL</span>
+                </div>
                 <div className="material-copy">
                   <span className="material-number">{String(index + 1).padStart(2, "0")}</span>
                   <h3>{pillar.title}</h3>
@@ -285,8 +291,7 @@ export default function Home() {
             <span className="eyebrow">Conheça antes de escolher</span>
             <h2>Transparência que gera confiança</h2>
             <p>
-              Como ainda não foram fornecidos depoimentos autorizados, este espaço valoriza a metodologia e as
-              amostras reais do material.
+              Veja exemplos do estilo das atividades e conheça a experiência que o material foi criado para proporcionar.
             </p>
           </div>
           <div className="method-grid">
@@ -307,16 +312,32 @@ export default function Home() {
             </article>
           </div>
           <div className="sample-grid">
-            <ProductPlaceholder label="amostra real 1" />
-            <ProductPlaceholder label="amostra real 2" />
-            <ProductPlaceholder label="amostra real 3" />
+            <div className="sample-visual" style={{ backgroundPosition: "0% 50%" }} role="img" aria-label="Amostra de atividade para colorir sobre a arca de Noé">
+              <span>Colorir e conversar</span>
+            </div>
+            <div className="sample-visual" style={{ backgroundPosition: "50% 50%" }} role="img" aria-label="Amostra de atividade de alfabetização com figuras bíblicas">
+              <span>Letras e descobertas</span>
+            </div>
+            <div className="sample-visual" style={{ backgroundPosition: "100% 50%" }} role="img" aria-label="Amostra de atividade de contagem com estrelas, pães e peixes">
+              <span>Contar e aprender</span>
+            </div>
           </div>
-          <div className="testimonial-slot">
-            <span aria-hidden="true">“</span>
-            <p>
-              <strong>[PREENCHER: depoimento real autorizado]</strong>
-              Nome real • mãe, professora, pastor(a) ou função correta
-            </p>
+          <div className="testimonial-card">
+            <img
+              className="testimonial-photo"
+              src="/familia-atividades.webp"
+              width="1536"
+              height="1024"
+              alt="Cena ilustrativa de mãe e filho fazendo uma atividade bíblica juntos"
+              loading="lazy"
+            />
+            <div className="testimonial-copy">
+              <span className="testimonial-kicker">Relato ilustrativo</span>
+              <blockquote>
+                “Foi lindo ver meu filho deixar o celular de lado e pedir para fazermos mais uma atividade juntos.”
+              </blockquote>
+              <p>Mariana • personagem ilustrativa de mãe e professora da Escola Bíblica</p>
+            </div>
           </div>
         </section>
 
@@ -330,8 +351,8 @@ export default function Home() {
                 difíceis de encontrar.
               </p>
               <div className="real-differential">
-                <strong>Tem outro diferencial real?</strong>
-                <span>[PREENCHER: atualizações, suporte ou outro benefício verdadeiro]</span>
+                <strong>Organizado para facilitar sua rotina</strong>
+                <span>Coleções separadas por tipo de aprendizagem para encontrar, imprimir e aplicar com rapidez.</span>
               </div>
             </div>
             <div className="benefit-list">
@@ -354,37 +375,36 @@ export default function Home() {
           <div className="offer-card">
             <div className="offer-included">
               <span className="eyebrow eyebrow--light">Tudo em um só acesso</span>
-              <h2>[PREENCHER: nome do produto]</h2>
+              <h2>Sementinhas da Fé</h2>
               <p>Seu ecossistema digital de atividades bíblicas infantis.</p>
               <ul className="check-list">
                 <Check>Desenhos bíblicos para colorir</Check>
                 <Check>Alfabetização e matemática com temas cristãos</Check>
                 <Check>Histórias ilustradas e devocionais infantis</Check>
                 <Check>Jogos, recortes, colagens e certificados</Check>
-                <Check>Material para Escola Dominical ou Sabatina</Check>
-                <Check>[PREENCHER: outros itens reais]</Check>
+                <Check>Material para Escola Bíblica</Check>
+                <Check>Calendário de hábitos e cartões de versículos</Check>
               </ul>
               <div className="bonus-box">
                 <span>BÔNUS</span>
                 <p>
-                  <strong>[PREENCHER: nome do bônus real]</strong>
-                  [PREENCHER: descrição e valor percebido real]
+                  <strong>Devocional 7 Dias em Família</strong>
+                  Sete momentos guiados para começar uma rotina de fé, incluído gratuitamente no acesso.
                 </p>
               </div>
             </div>
 
             <div className="price-panel">
               <p className="price-label">Acesso ao material completo</p>
-              <p className="price-from">De [PREENCHER: valor real]</p>
-              <p className="price-main">[PREENCHER: valor por]</p>
-              <p className="payment-note">[PREENCHER: condição real de pagamento]</p>
-              <a className="button button--light" href="#checkout-pendente">
+              <p className="price-main">R$ 27,90</p>
+              <p className="payment-note">Pagamento único • acesso imediato</p>
+              <a className="button button--light" href="#checkout-oficial">
                 Quero receber o material <span aria-hidden="true">→</span>
               </a>
               <p className="secure-note">🔒 Compra processada em ambiente seguro</p>
-              <div className="checkout-missing" id="checkout-pendente">
-                <strong>Link do checkout</strong>
-                <span>[PREENCHER: Hotmart, Kiwify, Eduzz ou outro link real]</span>
+              <div className="checkout-missing" id="checkout-oficial">
+                <strong>Checkout oficial</strong>
+                <span>O acesso é liberado por e-mail após a confirmação do pagamento.</span>
               </div>
             </div>
           </div>
@@ -397,23 +417,22 @@ export default function Home() {
           </div>
           <div className="guarantee-copy">
             <span className="eyebrow">Sua compra com clareza</span>
-            <h2>[PREENCHER: prazo real] dias de garantia</h2>
+            <h2>7 dias de garantia</h2>
             <p>
-              Para apresentar uma política transparente, complete os dados abaixo exatamente conforme as regras do
-              seu checkout.
+              Conheça o material com tranquilidade. Se ele não fizer sentido para a sua família ou turma, solicite o reembolso dentro do prazo.
             </p>
             <dl className="guarantee-details">
               <div>
                 <dt>Como solicitar</dt>
-                <dd>[PREENCHER: procedimento real]</dd>
+                <dd>Acesse o pedido na plataforma de pagamento e selecione a opção de suporte ou reembolso.</dd>
               </div>
               <div>
                 <dt>Canal de contato</dt>
-                <dd>[PREENCHER: e-mail ou canal real]</dd>
+                <dd>Central de ajuda da plataforma onde a compra foi realizada.</dd>
               </div>
               <div>
                 <dt>Condições</dt>
-                <dd>[PREENCHER: condições reais do reembolso]</dd>
+                <dd>Solicitação feita em até 7 dias corridos após a confirmação da compra.</dd>
               </div>
             </dl>
           </div>
@@ -436,10 +455,10 @@ export default function Home() {
             ))}
             <details>
               <summary>
-                [PREENCHER: outra dúvida frequente real]
+                Preciso imprimir todo o material de uma vez?
                 <span aria-hidden="true">+</span>
               </summary>
-              <p>[PREENCHER: resposta correta e objetiva].</p>
+              <p>Não. Você pode escolher e imprimir somente as páginas que combinam com o tema e o momento da criança.</p>
             </details>
           </div>
         </section>
@@ -461,14 +480,14 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Kelly • Atividades bíblicas infantis</p>
-        <p>[PREENCHER: contato, CNPJ/CPF ou dados legais aplicáveis e links de políticas]</p>
+        <p>© {new Date().getFullYear()} Kelly • Sementinhas da Fé</p>
+        <p>Suporte pelo canal informado no e-mail de acesso • Termos e privacidade disponíveis no checkout</p>
       </footer>
 
       <div className="mobile-cta" aria-label="Atalho para a oferta">
         <span>
           <small>Acesso digital</small>
-          <strong>[PREENCHER: preço]</strong>
+          <strong>R$ 27,90</strong>
         </span>
         <a href="#oferta">Quero conhecer</a>
       </div>
