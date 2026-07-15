@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -31,6 +32,7 @@ test("server-renders the complete Sementinhas de Fé landing page", async () => 
 
   const requiredCopy = [
     "Toda mãe cristã sonha em ver o filho amando a Bíblia.",
+    "mais de 400 atividades bíblicas prontas para imprimir",
     "Quem preparou isso pra você",
     "Isso já aconteceu com você?",
     "O Método Sementinha",
@@ -49,8 +51,22 @@ test("server-renders the complete Sementinhas de Fé landing page", async () => 
   assert.ok(html.includes('id="foto-criadora"'));
   assert.ok(html.includes("PIXEL_META_ADS_AQUI"));
   assert.ok(html.includes("GA_AQUI"));
-  assert.ok(html.includes("/og.png"));
+  assert.ok(html.includes("/og-400.png"));
   assert.doesNotMatch(html, /lorem ipsum|insira o texto aqui|headline vazia|a definir/i);
+
+  const checkoutLinks = html.match(/href="https:\/\/SEU-CHECKOUT-AQUI\.com"/g) ?? [];
+  assert.ok(checkoutLinks.length >= 4, `expected at least four checkout CTAs, found ${checkoutLinks.length}`);
+});
+
+test("GitHub Pages export is static and self-contained", async () => {
+  const html = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+
+  assert.ok(html.includes("mais de 400 atividades bíblicas prontas para imprimir"));
+  assert.ok(html.includes("PIXEL_META_ADS_AQUI"));
+  assert.ok(html.includes("GA_AQUI"));
+  assert.ok(html.includes("og-400.png"));
+  assert.doesNotMatch(html, /<script\b/i);
+  assert.doesNotMatch(html, /\/(?:_build|_next)\//i);
 
   const checkoutLinks = html.match(/href="https:\/\/SEU-CHECKOUT-AQUI\.com"/g) ?? [];
   assert.ok(checkoutLinks.length >= 4, `expected at least four checkout CTAs, found ${checkoutLinks.length}`);

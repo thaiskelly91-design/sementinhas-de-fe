@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(origin),
     title: "Sementinhas de Fé | Atividades Bíblicas para Imprimir",
     description:
-      "30 atividades bíblicas prontas para imprimir e ensinar a Palavra de Deus em só 10 minutos por dia.",
+      "Mais de 400 atividades bíblicas prontas para imprimir e ensinar a Palavra de Deus em só 10 minutos por dia.",
     icons: {
       icon: "/favicon.png",
       shortcut: "/favicon.png",
@@ -22,21 +22,21 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "pt_BR",
       url: origin,
       title: "Sementinhas de Fé",
-      description: "30 atividades bíblicas prontas para imprimir. 10 minutos por dia.",
+      description: "Mais de 400 atividades bíblicas prontas para imprimir. 10 minutos por dia.",
       images: [
         {
-          url: `${origin}/og.png`,
+          url: `${origin}/og-400.png`,
           width: 1536,
           height: 1024,
-          alt: "Sementinhas de Fé — 30 atividades bíblicas prontas para imprimir",
+          alt: "Sementinhas de Fé — mais de 400 atividades bíblicas prontas para imprimir",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: "Sementinhas de Fé",
-      description: "30 atividades bíblicas prontas para imprimir. 10 minutos por dia.",
-      images: [`${origin}/og.png`],
+      description: "Mais de 400 atividades bíblicas prontas para imprimir. 10 minutos por dia.",
+      images: [`${origin}/og-400.png`],
     },
   };
 }

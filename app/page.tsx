@@ -8,7 +8,7 @@ const dores = [
 ];
 
 const itensInclusos = [
-  "30 páginas de atividades bíblicas para imprimir (colorir, caça-palavras, ligar pontos)",
+  "Mais de 400 atividades bíblicas para imprimir (colorir, caça-palavras, ligar pontos)",
   "10 histórias bíblicas recontadas em linguagem simples para crianças de 3 a 10 anos",
   "Perguntas de reflexão prontas para fazer com seu filho depois de cada atividade",
   "Certificado 'Pequeno Guerreiro da Fé' para imprimir e comemorar o progresso",
@@ -78,7 +78,7 @@ function ProductMockup({ compact = false }: { compact?: boolean }) {
         <span className="page-doodle">☀</span>
       </div>
       <div className="page page--middle">
-        <span className="page-kicker">30 atividades</span>
+        <span className="page-kicker">400+ atividades</span>
         <span className="page-doodle">★</span>
       </div>
       <div className="page page--front">
@@ -119,7 +119,7 @@ export default function Home() {
           <div className="hero-copy">
             <span className="eyebrow">10 minutos por dia</span>
             <h1>Toda mãe cristã sonha em ver o filho amando a Bíblia. Mas entre a correria do dia a dia e a tela do tablet, sobra pouco tempo pra isso — não é mesmo?</h1>
-            <p className="hero-lead">“Sementinhas de Fé” são 30 atividades bíblicas prontas para imprimir, feitas para ensinar a Palavra de Deus em só 10 minutos por dia — sem você precisar preparar nada.</p>
+            <p className="hero-lead">“Sementinhas de Fé” são mais de 400 atividades bíblicas prontas para imprimir, feitas para ensinar a Palavra de Deus em só 10 minutos por dia — sem você precisar preparar nada.</p>
             <Cta>Quero as Atividades por R$19,90</Cta>
             <p className="trust-line"><span aria-hidden="true">🔒</span> Pagamento seguro · Acesso imediato · Garantia de 7 dias</p>
           </div>
