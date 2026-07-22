@@ -39,7 +39,8 @@ test("server-renders the complete Sementinhas de Fé landing page", async () => 
     "O que vem dentro do Sementinhas de Fé",
     "Para quem é o Sementinhas de Fé",
     "Por que confiar",
-    "Oferta de lançamento",
+    "O que as famílias podem viver com o material",
+    "Material completo + 5 bônus especiais",
     "Perguntas frequentes",
     "Seu filho não precisa esperar crescer para conhecer a Bíblia",
   ];
@@ -55,7 +56,10 @@ test("server-renders the complete Sementinhas de Fé landing page", async () => 
   assert.ok(html.includes("Desafio 7 Dias com a Bíblia"));
   assert.ok(html.includes("Quadro de Recompensas Pequenos Heróis da Fé"));
   assert.equal((html.match(/class="bonus-card"/g) ?? []).length, 5);
+  assert.equal((html.match(/class="testimonial-card"/g) ?? []).length, 5);
+  assert.ok(html.includes("Relatos ilustrativos"));
   assert.doesNotMatch(html, /R\$19,90|primeiro grupo|primeira leva/i);
+  assert.doesNotMatch(html, /oferta de lançamento|fase de lançamento|bônus de lançamento/i);
   assert.doesNotMatch(html, /contato@SEUDOMINIO\.com\.br|mailto:/i);
   assert.ok(html.includes("PIXEL_META_ADS_AQUI"));
   assert.ok(html.includes("GA_AQUI"));
@@ -76,7 +80,10 @@ test("GitHub Pages export is static and self-contained", async () => {
   assert.ok(html.includes("foto-thais-kelly.jpg"));
   assert.ok(html.includes("R$27,00"));
   assert.equal((html.match(/class="bonus-card"/g) ?? []).length, 5);
+  assert.equal((html.match(/class="testimonial-card"/g) ?? []).length, 5);
+  assert.ok(html.includes("Relatos ilustrativos"));
   assert.doesNotMatch(html, /R\$19,90|primeiro grupo|primeira leva/i);
+  assert.doesNotMatch(html, /oferta de lançamento|fase de lançamento|bônus de lançamento/i);
   assert.doesNotMatch(html, /contato@SEUDOMINIO\.com\.br|mailto:/i);
   assert.doesNotMatch(html, /<script\b/i);
   assert.doesNotMatch(html, /\/(?:_build|_next)\//i);

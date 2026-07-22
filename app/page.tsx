@@ -74,6 +74,29 @@ const bonusOferta = [
   },
 ];
 
+const depoimentosIlustrativos = [
+  {
+    texto: "Com uma atividade pronta, fica muito mais fácil separar dez minutos do dia e transformar esse momento em conexão com meu filho.",
+    perfil: "Exemplo de mãe de uma criança de 6 anos",
+  },
+  {
+    texto: "Meu filho se envolve mais quando pode colorir, responder e conversar sobre a história. O aprendizado deixa de parecer uma obrigação.",
+    perfil: "Exemplo de família com criança de 5 anos",
+  },
+  {
+    texto: "Ter as histórias e as perguntas organizadas me dá segurança para conduzir o momento bíblico, mesmo sem saber explicar tudo sozinha.",
+    perfil: "Exemplo de mãe iniciando o devocional em casa",
+  },
+  {
+    texto: "O planner ajuda a manter a constância sem transformar a rotina em cobrança. Cada dia concluído vira uma pequena conquista em família.",
+    perfil: "Exemplo de família usando o planner semanal",
+  },
+  {
+    texto: "É uma alternativa simples para diminuir um pouco o tempo de tela e criar lembranças afetivas enquanto a criança aprende sobre a Bíblia.",
+    perfil: "Exemplo de responsável por uma criança de 8 anos",
+  },
+];
+
 function Cta({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <a className={`cta ${className}`} href={LINK_DO_CHECKOUT}>
@@ -241,16 +264,42 @@ export default function Home() {
           <div className="trust-copy">
             <span className="eyebrow eyebrow--light">Transparência de verdade</span>
             <h2 id="titulo-confiar">Por que confiar</h2>
-            <p>O Sementinhas de Fé está em fase de lançamento — por isso ainda não temos uma galeria cheia de depoimentos, e preferimos ser transparentes sobre isso em vez de inventar. O que oferecemos é uma garantia simples: se você aplicar o material e sentir que não fez sentido pra sua família, devolvemos 100% do seu dinheiro em até 7 dias, sem perguntas.</p>
+            <p>Você recebe uma garantia simples: se aplicar o material e sentir que ele não fez sentido para sua família, devolvemos 100% do seu dinheiro em até 7 dias, sem perguntas e sem burocracia.</p>
             <strong className="guarantee-text">Garantia incondicional de 7 dias</strong>
           </div>
         </section>
 
+        <section className="section testimonials" aria-labelledby="titulo-depoimentos">
+          <div className="section-heading section-heading--center">
+            <span className="eyebrow">Relatos ilustrativos</span>
+            <h2 id="titulo-depoimentos">O que as famílias podem viver com o material</h2>
+            <p className="testimonials-disclosure">Os relatos abaixo são exemplos ilustrativos da experiência proposta pelo Sementinhas de Fé. Quando você tiver avaliações reais, eles poderão ser substituídos pelos comentários das famílias.</p>
+          </div>
+          <div className="testimonial-carousel" aria-label="Carrossel de relatos ilustrativos">
+            {depoimentosIlustrativos.map((depoimento, index) => (
+              <article className="testimonial-card" id={`depoimento-${index + 1}`} key={depoimento.texto}>
+                <span className="testimonial-stars" aria-label="Cinco estrelas">★★★★★</span>
+                <blockquote><p>“{depoimento.texto}”</p></blockquote>
+                <div className="testimonial-author">
+                  <strong>Relato ilustrativo</strong>
+                  <span>{depoimento.perfil}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+          <nav className="carousel-dots" aria-label="Escolher relato ilustrativo">
+            {depoimentosIlustrativos.map((depoimento, index) => (
+              <a href={`#depoimento-${index + 1}`} aria-label={`Ver relato ${index + 1}`} key={depoimento.perfil} />
+            ))}
+          </nav>
+          <p className="carousel-hint">Deslize para o lado para ver todos os relatos</p>
+        </section>
+
         <section className="section offer" aria-labelledby="titulo-oferta">
           <div className="offer-heading">
-            <span className="launch-pill">LANÇAMENTO</span>
-            <h2 id="titulo-oferta">Oferta de lançamento</h2>
-            <p>Na oferta de lançamento, você recebe o material completo e ainda leva 5 bônus digitais sem custo extra para tornar o momento bíblico em família ainda mais especial.</p>
+            <span className="bonus-pill">PACOTE ESPECIAL</span>
+            <h2 id="titulo-oferta">Material completo + 5 bônus especiais</h2>
+            <p>Além de receber o material completo, você leva 5 bônus digitais sem custo extra para tornar o momento bíblico em família ainda mais especial.</p>
           </div>
           <div className="bonus-grid">
             {bonusOferta.map((bonus, index) => (
@@ -265,7 +314,7 @@ export default function Home() {
           </div>
           <div className="price-box">
             <p>De <s>R$47,00</s> por <strong>R$27,00</strong> <span>· pagamento único</span></p>
-            <Cta>Quero garantir com os bônus de lançamento</Cta>
+            <Cta>Quero garantir o material + 5 bônus</Cta>
             <small><span aria-hidden="true">🔒</span> Pagamento seguro · Acesso imediato · Garantia de 7 dias</small>
           </div>
         </section>
