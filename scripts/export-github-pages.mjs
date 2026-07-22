@@ -76,5 +76,6 @@ await writeFile(new URL("index.html", outputRoot), html, "utf8");
 await writeFile(new URL(".nojekyll", outputRoot), "", "utf8");
 await copyFile(new URL("../public/og-400.png", import.meta.url), new URL("og-400.png", outputRoot));
 await copyFile(new URL("../public/favicon.png", import.meta.url), new URL("favicon.png", outputRoot));
+await copyFile(new URL("../public/foto-thais-kelly.jpg", import.meta.url), new URL("foto-thais-kelly.jpg", outputRoot));
 
 console.log("GitHub Pages exportado em docs/");

@@ -46,6 +46,34 @@ const perguntas = [
   },
 ];
 
+const bonusOferta = [
+  {
+    icone: "✎",
+    titulo: "Kit de Versículos para Colorir",
+    descricao: "5 cartões ilustrados com versículos bíblicos simples, prontos para a criança colorir e você pendurar no quarto dela.",
+  },
+  {
+    icone: "✓",
+    titulo: "Planner da Semana da Fé",
+    descricao: "Uma folha semanal para marcar os dias em que vocês fizeram o devocional juntos e anotar o que seu filho mais gostou naquele dia.",
+  },
+  {
+    icone: "♡",
+    titulo: "Cartões de Promessas Bíblicas",
+    descricao: "12 cartões para recortar, compartilhar em família e lembrar as crianças das promessas e do cuidado de Deus.",
+  },
+  {
+    icone: "7",
+    titulo: "Desafio 7 Dias com a Bíblia",
+    descricao: "Um roteiro simples de sete dias para criar o hábito do momento bíblico em família, com apenas 10 minutos por dia.",
+  },
+  {
+    icone: "★",
+    titulo: "Quadro de Recompensas Pequenos Heróis da Fé",
+    descricao: "Uma folha imprimível para acompanhar cada atividade concluída e celebrar o progresso da criança de forma positiva.",
+  },
+];
+
 function Cta({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <a className={`cta ${className}`} href={LINK_DO_CHECKOUT}>
@@ -120,7 +148,7 @@ export default function Home() {
             <span className="eyebrow">10 minutos por dia</span>
             <h1>Toda mãe cristã sonha em ver o filho amando a Bíblia. Mas entre a correria do dia a dia e a tela do tablet, sobra pouco tempo pra isso — não é mesmo?</h1>
             <p className="hero-lead">“Sementinhas de Fé” são mais de 400 atividades bíblicas prontas para imprimir, feitas para ensinar a Palavra de Deus em só 10 minutos por dia — sem você precisar preparar nada.</p>
-            <Cta>Quero as Atividades por R$19,90</Cta>
+            <Cta>Quero as Atividades por R$27,00</Cta>
             <p className="trust-line"><span aria-hidden="true">🔒</span> Pagamento seguro · Acesso imediato · Garantia de 7 dias</p>
           </div>
           <ProductMockup />
@@ -128,12 +156,13 @@ export default function Home() {
 
         <section className="section creator" aria-labelledby="titulo-criadora">
           <div className="creator-photo-wrap">
-            {/* SUBSTITUIR PELA FOTO REAL DA CRIADORA AQUI */}
-            <div id="foto-criadora" role="img" aria-label="Espaço reservado para a foto real da criadora Thaís Kelly">
-              <span className="photo-icon" aria-hidden="true">♙</span>
-              <strong>Foto da criadora</strong>
-              <small>Thaís Kelly</small>
-            </div>
+            <img
+              id="foto-criadora"
+              src="foto-thais-kelly.jpg"
+              alt="Thaís Kelly, criadora do Sementinhas de Fé"
+              width="720"
+              height="901"
+            />
             <span className="creator-badge">Criado com carinho</span>
           </div>
           <div className="creator-copy">
@@ -170,7 +199,7 @@ export default function Home() {
             <span className="eyebrow eyebrow--light">10 minutos • sem preparação</span>
             <h2 id="titulo-metodo">O Método Sementinha</h2>
             <p>Não é sobre ter mais tempo. É sobre ter o material certo, pronto, na hora certa. O Método Sementinha organiza o ensino bíblico em doses pequenas — 10 minutos por dia — com atividade, história e uma pergunta simples pra puxar conversa com a criança. Você não precisa preparar nada, não precisa saber explicar teologia. Só abrir, imprimir e sentar com seu filho. Cada atividade concluída é uma sementinha plantada — e sementinha, com tempo, sempre vira árvore.</p>
-            <Cta>Quero as Atividades por R$19,90</Cta>
+            <Cta>Quero as Atividades por R$27,00</Cta>
           </div>
         </section>
 
@@ -179,7 +208,7 @@ export default function Home() {
             <span className="section-number" aria-hidden="true">02</span>
             <h2 id="titulo-incluido">O que vem dentro do Sementinhas de Fé</h2>
             <CheckList items={itensInclusos} />
-            <Cta>Quero as Atividades por R$19,90</Cta>
+            <Cta>Quero as Atividades por R$27,00</Cta>
           </div>
           <ProductMockup compact />
         </section>
@@ -221,26 +250,21 @@ export default function Home() {
           <div className="offer-heading">
             <span className="launch-pill">LANÇAMENTO</span>
             <h2 id="titulo-oferta">Oferta de lançamento</h2>
-            <p>Este é o nosso primeiro grupo de famílias. Para agradecer quem confiar no material agora, nesta semana de lançamento a compra vem com 2 bônus sem custo extra. Assim que essa primeira leva de vagas de lançamento fechar, os bônus saem do ar.</p>
+            <p>Na oferta de lançamento, você recebe o material completo e ainda leva 5 bônus digitais sem custo extra para tornar o momento bíblico em família ainda mais especial.</p>
           </div>
           <div className="bonus-grid">
-            <article className="bonus-card">
-              <span className="free-badge">GRÁTIS</span>
-              <span className="bonus-icon" aria-hidden="true">✎</span>
-              <p className="bonus-label">Bônus 1</p>
-              <h3>Kit de Versículos para Colorir</h3>
-              <p>5 cartões ilustrados com versículos bíblicos simples, prontos para a criança colorir e você pendurar no quarto dela.</p>
-            </article>
-            <article className="bonus-card">
-              <span className="free-badge">GRÁTIS</span>
-              <span className="bonus-icon" aria-hidden="true">✓</span>
-              <p className="bonus-label">Bônus 2</p>
-              <h3>Planner da Semana da Fé</h3>
-              <p>Uma folha semanal para marcar os dias em que vocês fizeram o devocional juntos e anotar o que seu filho mais gostou naquele dia.</p>
-            </article>
+            {bonusOferta.map((bonus, index) => (
+              <article className="bonus-card" key={bonus.titulo}>
+                <span className="free-badge">GRÁTIS</span>
+                <span className="bonus-icon" aria-hidden="true">{bonus.icone}</span>
+                <p className="bonus-label">{`Bônus ${index + 1}`}</p>
+                <h3>{bonus.titulo}</h3>
+                <p>{bonus.descricao}</p>
+              </article>
+            ))}
           </div>
           <div className="price-box">
-            <p>De <s>R$47,00</s> por <strong>R$19,90</strong> <span>· pagamento único</span></p>
+            <p>De <s>R$47,00</s> por <strong>R$27,00</strong> <span>· pagamento único</span></p>
             <Cta>Quero garantir com os bônus de lançamento</Cta>
             <small><span aria-hidden="true">🔒</span> Pagamento seguro · Acesso imediato · Garantia de 7 dias</small>
           </div>
@@ -264,7 +288,7 @@ export default function Home() {
         <section className="final-cta" aria-labelledby="titulo-final">
           <span className="final-sprout" aria-hidden="true"><i /></span>
           <h2 id="titulo-final">Seu filho não precisa esperar crescer para conhecer a Bíblia de um jeito que ele realmente goste. Comece hoje, com 10 minutos.</h2>
-          <Cta>Quero as Atividades por R$19,90</Cta>
+          <Cta>Quero as Atividades por R$27,00</Cta>
           <p>Pagamento seguro · Acesso imediato · Garantia de 7 dias</p>
         </section>
       </main>
@@ -280,8 +304,8 @@ export default function Home() {
       </footer>
 
       <div className="sticky-cta" aria-label="Atalho para comprar Sementinhas de Fé">
-        <span><small>Pagamento único</small><strong>R$19,90</strong></span>
-        <Cta>Quero as Atividades por R$19,90</Cta>
+        <span><small>Pagamento único</small><strong>R$27,00</strong></span>
+        <Cta>Quero as Atividades por R$27,00</Cta>
       </div>
     </>
   );
