@@ -56,6 +56,7 @@ test("server-renders the complete Sementinhas de Fé landing page", async () => 
   assert.ok(html.includes("Quadro de Recompensas Pequenos Heróis da Fé"));
   assert.equal((html.match(/class="bonus-card"/g) ?? []).length, 5);
   assert.doesNotMatch(html, /R\$19,90|primeiro grupo|primeira leva/i);
+  assert.doesNotMatch(html, /contato@SEUDOMINIO\.com\.br|mailto:/i);
   assert.ok(html.includes("PIXEL_META_ADS_AQUI"));
   assert.ok(html.includes("GA_AQUI"));
   assert.ok(html.includes("/og-400.png"));
@@ -76,6 +77,7 @@ test("GitHub Pages export is static and self-contained", async () => {
   assert.ok(html.includes("R$27,00"));
   assert.equal((html.match(/class="bonus-card"/g) ?? []).length, 5);
   assert.doesNotMatch(html, /R\$19,90|primeiro grupo|primeira leva/i);
+  assert.doesNotMatch(html, /contato@SEUDOMINIO\.com\.br|mailto:/i);
   assert.doesNotMatch(html, /<script\b/i);
   assert.doesNotMatch(html, /\/(?:_build|_next)\//i);
 

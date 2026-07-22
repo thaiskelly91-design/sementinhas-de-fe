@@ -300,7 +300,6 @@ export default function Home() {
           <a href="#termos">Termos de uso</a>
           <a href="#privacidade">Política de privacidade</a>
         </nav>
-        <a href="mailto:contato@SEUDOMINIO.com.br">contato@SEUDOMINIO.com.br</a>
       </footer>
 
       <div className="sticky-cta" aria-label="Atalho para comprar Sementinhas de Fé">
