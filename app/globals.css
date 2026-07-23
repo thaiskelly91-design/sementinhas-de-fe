@@ -944,18 +944,18 @@ h1 {
   text-transform: uppercase;
 }
 
-.testimonials {
+.benefits {
   overflow: hidden;
 }
 
-.testimonials-disclosure {
+.benefits-intro {
   max-width: 680px;
   margin: 18px auto 0;
   color: var(--navy-soft);
   font-size: 14px;
 }
 
-.testimonial-carousel {
+.benefit-carousel {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(84%, 1fr);
@@ -969,7 +969,7 @@ h1 {
   scrollbar-width: thin;
 }
 
-.testimonial-card {
+.benefit-card {
   min-height: 285px;
   padding: 28px 24px;
   border: 1px solid #ead9b1;
@@ -983,55 +983,38 @@ h1 {
   scroll-snap-align: center;
 }
 
-.testimonial-stars {
-  color: #e5a829;
-  font-size: 17px;
-  letter-spacing: 0.12em;
-}
-
-.testimonial-card blockquote {
-  flex: 1;
-  margin: 22px 0 26px;
-}
-
-.testimonial-card blockquote p {
-  margin: 0;
+.benefit-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px 18px 18px 7px;
+  display: grid;
+  place-items: center;
+  background: var(--sky);
   color: var(--navy);
-  font-family: var(--title-font);
-  font-size: 21px;
-  line-height: 1.42;
+  font-size: 25px;
+  font-weight: 900;
 }
 
-.testimonial-author {
-  padding-top: 18px;
-  border-top: 1px solid rgba(46, 58, 89, 0.12);
+.benefit-card h3 {
+  margin: 24px 0 14px;
+  color: var(--navy);
+  font-size: 24px;
 }
 
-.testimonial-author strong,
-.testimonial-author span {
-  display: block;
-}
-
-.testimonial-author strong {
-  color: var(--coral-dark);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.testimonial-author span {
-  margin-top: 5px;
+.benefit-card > p {
+  margin: 0;
   color: var(--navy-soft);
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
-.carousel-dots {
+.benefit-dots {
   display: flex;
   justify-content: center;
   gap: 9px;
 }
 
-.carousel-dots a {
+.benefit-dots a {
   width: 11px;
   height: 11px;
   border: 2px solid var(--coral);
@@ -1040,13 +1023,13 @@ h1 {
   transition: transform 180ms ease, background-color 180ms ease;
 }
 
-.carousel-dots a:hover,
-.carousel-dots a:focus-visible {
+.benefit-dots a:hover,
+.benefit-dots a:focus-visible {
   background: var(--coral);
   transform: scale(1.18);
 }
 
-.carousel-hint {
+.benefit-hint {
   margin: 12px 0 0;
   color: var(--navy-soft);
   font-size: 12px;
@@ -1416,7 +1399,7 @@ footer nav {
     font-size: 12px;
   }
 
-  .testimonial-carousel {
+  .benefit-carousel {
     grid-auto-columns: minmax(380px, 70%);
   }
 }
@@ -1539,7 +1522,7 @@ footer nav {
     margin-bottom: 0;
   }
 
-  .testimonial-carousel {
+  .benefit-carousel {
     grid-auto-columns: minmax(420px, calc(50% - 8px));
   }
 

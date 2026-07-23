@@ -74,26 +74,56 @@ const bonusOferta = [
   },
 ];
 
-const depoimentosIlustrativos = [
+const beneficiosFamilia = [
   {
-    texto: "Com uma atividade pronta, fica muito mais fácil separar dez minutos do dia e transformar esse momento em conexão com meu filho.",
-    perfil: "Exemplo de mãe de uma criança de 6 anos",
+    icone: "♡",
+    titulo: "Mais conexão em família",
+    texto: "Crie um momento de presença e carinho enquanto vocês aprendem juntos sobre a Palavra de Deus.",
   },
   {
-    texto: "Meu filho se envolve mais quando pode colorir, responder e conversar sobre a história. O aprendizado deixa de parecer uma obrigação.",
-    perfil: "Exemplo de família com criança de 5 anos",
+    icone: "✓",
+    titulo: "Constância possível",
+    texto: "Transforme apenas 10 minutos por dia em uma rotina bíblica leve, possível e sem cobranças.",
   },
   {
-    texto: "Ter as histórias e as perguntas organizadas me dá segurança para conduzir o momento bíblico, mesmo sem saber explicar tudo sozinha.",
-    perfil: "Exemplo de mãe iniciando o devocional em casa",
+    icone: "▣",
+    titulo: "Menos tela, mais presença",
+    texto: "Ofereça uma alternativa envolvente ao celular e ao tablet, com atividades que prendem a atenção da criança.",
   },
   {
-    texto: "O planner ajuda a manter a constância sem transformar a rotina em cobrança. Cada dia concluído vira uma pequena conquista em família.",
-    perfil: "Exemplo de família usando o planner semanal",
+    icone: "?",
+    titulo: "Conversas com propósito",
+    texto: "Use perguntas prontas para conversar sobre fé, sentimentos e escolhas de um jeito que a criança compreenda.",
   },
   {
-    texto: "É uma alternativa simples para diminuir um pouco o tempo de tela e criar lembranças afetivas enquanto a criança aprende sobre a Bíblia.",
-    perfil: "Exemplo de responsável por uma criança de 8 anos",
+    icone: "✎",
+    titulo: "Aprendizado divertido",
+    texto: "Colorir, ligar pontos e resolver desafios ajuda a criança a aprender brincando e a lembrar das histórias bíblicas.",
+  },
+  {
+    icone: "◷",
+    titulo: "Nada para preparar",
+    texto: "Abra, imprima e comece. As histórias, atividades e perguntas já estão organizadas para facilitar sua rotina.",
+  },
+  {
+    icone: "★",
+    titulo: "Progresso que motiva",
+    texto: "Celebre cada atividade concluída e ajude a criança a perceber o quanto já aprendeu ao longo do caminho.",
+  },
+  {
+    icone: "⌂",
+    titulo: "Fé presente em casa",
+    texto: "Leve os ensinamentos bíblicos para situações do cotidiano e mostre que a fé também faz parte dos pequenos momentos.",
+  },
+  {
+    icone: "☀",
+    titulo: "Memórias afetivas",
+    texto: "Construa lembranças de cuidado, conversa e aprendizado que podem acompanhar seu filho por muitos anos.",
+  },
+  {
+    icone: "↗",
+    titulo: "Mais confiança para ensinar",
+    texto: "Conduza o momento bíblico com segurança, mesmo sem experiência ou conhecimento aprofundado de teologia.",
   },
 ];
 
@@ -269,30 +299,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section testimonials" aria-labelledby="titulo-depoimentos">
+        <section className="section benefits" aria-labelledby="titulo-beneficios">
           <div className="section-heading section-heading--center">
-            <span className="eyebrow">Relatos ilustrativos</span>
-            <h2 id="titulo-depoimentos">O que as famílias podem viver com o material</h2>
-            <p className="testimonials-disclosure">Os relatos abaixo são exemplos ilustrativos da experiência proposta pelo Sementinhas de Fé. Quando você tiver avaliações reais, eles poderão ser substituídos pelos comentários das famílias.</p>
+            <span className="eyebrow">Transformações possíveis</span>
+            <h2 id="titulo-beneficios">O que pode mudar na rotina da sua família</h2>
+            <p className="benefits-intro">Veja como o Sementinhas de Fé pode apoiar uma rotina mais leve, presente e conectada com a Palavra de Deus.</p>
           </div>
-          <div className="testimonial-carousel" aria-label="Carrossel de relatos ilustrativos">
-            {depoimentosIlustrativos.map((depoimento, index) => (
-              <article className="testimonial-card" id={`depoimento-${index + 1}`} key={depoimento.texto}>
-                <span className="testimonial-stars" aria-label="Cinco estrelas">★★★★★</span>
-                <blockquote><p>“{depoimento.texto}”</p></blockquote>
-                <div className="testimonial-author">
-                  <strong>Relato ilustrativo</strong>
-                  <span>{depoimento.perfil}</span>
-                </div>
+          <div className="benefit-carousel" aria-label="Carrossel de benefícios para a rotina da família">
+            {beneficiosFamilia.map((beneficio, index) => (
+              <article className="benefit-card" id={`beneficio-${index + 1}`} key={beneficio.titulo}>
+                <span className="benefit-icon" aria-hidden="true">{beneficio.icone}</span>
+                <h3>{beneficio.titulo}</h3>
+                <p>{beneficio.texto}</p>
               </article>
             ))}
           </div>
-          <nav className="carousel-dots" aria-label="Escolher relato ilustrativo">
-            {depoimentosIlustrativos.map((depoimento, index) => (
-              <a href={`#depoimento-${index + 1}`} aria-label={`Ver relato ${index + 1}`} key={depoimento.perfil} />
+          <nav className="benefit-dots" aria-label="Escolher benefício">
+            {beneficiosFamilia.map((beneficio, index) => (
+              <a href={`#beneficio-${index + 1}`} aria-label={`Ver benefício ${index + 1}`} key={beneficio.titulo} />
             ))}
           </nav>
-          <p className="carousel-hint">Deslize para o lado para ver todos os relatos</p>
+          <p className="benefit-hint">Deslize para o lado para ver todas as possibilidades</p>
         </section>
 
         <section className="section offer" aria-labelledby="titulo-oferta">
